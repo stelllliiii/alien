@@ -38,7 +38,7 @@ class  AlienInvasion:
         available_space_y = (self.settings.screen_height - 
                              (3*alien_height) - ship_height)
         number_rows = available_space_y//(2*alien_height)
-        
+
         for row_number in range(number_rows):
             for alien_number in range(number_aliens_x):
                 self._create_alien(alien_number,row_number)
@@ -60,7 +60,7 @@ class  AlienInvasion:
     def _change_fleet_direction(self):
         for alien in self.aliens.sprites():
             alien.rect.y += self.settings.fleet_drop_speed
-            self.settings.fleet_direction *= -1
+        self.settings.fleet_direction *= -1
         
     def _check_events(self):
         #响应按键和鼠标事件
