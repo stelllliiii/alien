@@ -146,7 +146,7 @@ class  AlienInvasion:
             self.aliens.empty()
             self.bullets.empty()
 
-            self._create_alien()
+            self._create_fleet()
             self.ship.center_ship()
             pygame.mouse.set_visible(False)
 
@@ -166,8 +166,8 @@ class  AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
-        self.aliens.draw(self.screen)
-
+        self.sb.show_score()
+        
         if not self.stats.game_active:
             self.play_button.draw_button()
         pygame.display.flip()
