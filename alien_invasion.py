@@ -128,6 +128,9 @@ class  AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.stats.level += 1
+            self.sb.prep_level()
+
             self.settings.increase_speed()
 
     def _check_aliens_bottom(self):
@@ -143,6 +146,7 @@ class  AlienInvasion:
             self.stats.reset_stats()
             self.stats.game_active = True
             self.sb.prep_score()
+            self.sb.prep_level
 
             self.aliens.empty()
             self.bullets.empty()
